@@ -92,6 +92,7 @@ public class ClusterIntegrationTest {
     init();
     startCluster();
     waitForAndVerifyOutputFiles();
+//    Thread.sleep(10_000);
     shutdownCluster();
   }
 
@@ -225,7 +226,7 @@ public class ClusterIntegrationTest {
 
   private boolean hasExpectedFilesBeenCreated(Void input) {
     int numOfFiles = getNumOfOutputFiles(_jobOutputBasePath);
-    return numOfFiles == 1;
+    return numOfFiles == 2;
   }
 
   private int getNumOfOutputFiles(Path jobOutputDir) {

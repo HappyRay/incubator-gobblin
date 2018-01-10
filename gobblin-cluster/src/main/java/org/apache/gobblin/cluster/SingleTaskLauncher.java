@@ -73,10 +73,16 @@ class SingleTaskLauncher {
 
     List<String> build() {
       addJavaBin();
+      addLog4jOption();
       addClassPath();
       addClassName();
       addOptions();
       return this.cmd;
+    }
+
+    private void addLog4jOption() {
+      this.cmd.add(
+          "-Dlog4j.configuration=file:/Users/ruyang/oss/gobblin/temp/my-log4j-append.properties");
     }
 
     private void addClassName() {

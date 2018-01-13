@@ -73,11 +73,18 @@ class SingleTaskLauncher {
 
     List<String> build() {
       addJavaBin();
+      addRemoteDebugOption();
       addLog4jOption();
       addClassPath();
       addClassName();
       addOptions();
       return this.cmd;
+    }
+
+    private void addRemoteDebugOption() {
+      this.cmd.add(
+          "-agentlib:jdwp=transport=dt_socket,server=n,address=ruyang-mn1.linkedin.biz:5008,"
+              + "suspend=y");
     }
 
     private void addLog4jOption() {

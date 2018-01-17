@@ -38,14 +38,15 @@ class SingleTaskRunnerMain {
   }
 
   public static void main(final String[] args) {
-    logger.info("SingleTaskRunnerMain starting. args: " + Arrays.toString(args));
-    final SingleTaskRunnerMain runnerMain = new SingleTaskRunnerMain(new SingleTaskRunnerBuilder());
-    try {
-      runnerMain.run(args);
-    } catch (final Exception e) {
-      logger.error("Got an exception running a single task.", e);
-      System.exit(1);
-    }
+    System.out.println("Ray test from the main of the Child process.");
+//    logger.info("SingleTaskRunnerMain starting. args: " + Arrays.toString(args));
+//    final SingleTaskRunnerMain runnerMain = new SingleTaskRunnerMain(new SingleTaskRunnerBuilder());
+//    try {
+//      runnerMain.run(args);
+//    } catch (final Exception e) {
+//      logger.error("Got an exception running a single task.", e);
+//      System.exit(1);
+//    }
   }
 
   void run(final String[] args)
